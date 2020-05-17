@@ -1,0 +1,5 @@
+getandyandz.py实现从resultqyandx.txt中按照batch读取出去qy的值即概率，存放在batch_y中，算出类别存放在cat中。
+再读出z（每个batch有n_y_active个[B,n_z]的z，每个[B,n_z]的z是根据对应的y的组件来生成的，因此根据n_y_active个概率值算出最终的一个期望[B,n_z]的z。
+由于z的每行代表一个图片对应的潜在变量，因此根据每一行对应的概率(存在batch_y中)可以求出每个图片对应的类别。因此类别作为key，图片对应的潜在变量的一行(即z的一行)作为value存放到字典变量中
+
+getyandx.py实现从resultqyandx.txt中按照batch读取出qy的值即概率，算出类别存放在cat中，将train_x和train_x_bar的数据读取出来组成[x,x_bar]，类别作为key，[x,x_bar]作为对应的value，存放到字典中
